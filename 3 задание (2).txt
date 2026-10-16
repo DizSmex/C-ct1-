@@ -1,0 +1,98 @@
+using System;
+
+namespace ConsoleAppTask3
+{
+    public class Task3
+    {
+        public string listNums(int x)
+        {
+            string s = "";
+            if (x >= 0)
+                for (int i = 0; i <= x; i++) s += i + " ";
+            else
+                for (int i = 0; i >= x; i--) s += i + " ";
+            return s.Trim();
+        }
+
+        public string chet(int x)
+        {
+            string s = "";
+            if (x >= 0)
+                for (int i = 0; i <= x; i += 2) s += i + " ";
+            else
+                for (int i = 0; i >= x; i -= 2) s += i + " ";
+            return s.Trim();
+        }
+
+        public int numLen(long x)
+        {
+            if (x == 0) return 1;
+            if (x < 0) x = -x;
+
+            int len = 0;
+            while (x > 0)
+            {
+                len++;
+                x /= 10;
+            }
+            return len;
+        }
+
+        public void square(int x)
+        {
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < x; j++)
+                    Console.Write("*");
+                Console.WriteLine();
+            }
+        }
+
+        public void rightTriangle(int x)
+        {
+            for (int i = 1; i <= x; i++)
+            {
+                for (int j = 1; j <= x - i; j++)
+                    Console.Write(" ");
+                for (int j = 1; j <= i; j++)
+                    Console.Write("*");
+                Console.WriteLine();
+            }
+        }
+
+        public static void Main()
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Task3 t = new Task3();
+
+            Console.WriteLine("--- Задача 1. Числа подряд ---");
+            Console.Write("Введите число x: ");
+            int x1 = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Результат: {t.listNums(x1)}");
+
+            Console.WriteLine("\n--- Задача 3. Четные числа ---");
+            Console.Write("Введите число x: ");
+            int x3 = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Результат: {t.chet(x3)}");
+
+            Console.WriteLine("\n--- Задача 5. Длина числа ---");
+            Console.Write("Введите число x: ");
+            long x5 = long.Parse(Console.ReadLine());
+            Console.WriteLine($"Результат: {t.numLen(x5)}");
+
+            Console.WriteLine("\n--- Задача 7. Квадрат ---");
+            Console.Write("Введите размер квадрата: ");
+            int x7 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Результат:");
+            t.square(x7);
+
+            Console.WriteLine("\n--- Задача 9. Правый треугольник ---");
+            Console.Write("Введите высоту треугольника: ");
+            int x9 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Результат:");
+            t.rightTriangle(x9);
+
+            Console.ReadKey();
+        }
+    }
+}

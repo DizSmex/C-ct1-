@@ -1,0 +1,73 @@
+using System;
+
+public class Task1
+{
+    // 1. Дробная часть
+    public double fraction(double x)
+    {
+        return x - (int)x;
+    }
+
+    // 3. Букву в число
+    public int charToNum(char x)
+    {
+        return x - '0';
+    }
+
+    // 5. Двузначное
+    public bool is2Digits(int x)
+    {
+        x = Math.Abs(x);
+        return x >= 10 && x <= 99;
+    }
+
+    // 7. Диапазон
+    public bool isInRange(int a, int b, int num)
+    {
+        return num >= Math.Min(a, b) && num <= Math.Max(a, b);
+    }
+
+    // 9. Равенство
+    public bool isEqual(int a, int b, int c)
+    {
+        return a == b && b == c;
+    }
+
+    public static void Main()
+    {
+        Task1 t = new Task1();
+
+        // 1
+        Console.Write("Введите число: ");
+        double x = double.Parse(Console.ReadLine());
+        Console.WriteLine($"Дробная часть: {t.fraction(x)}");
+
+        // 3
+        Console.Write("Введите цифру: ");
+        char c = Console.ReadLine()[0];
+        Console.WriteLine($"Число: {t.charToNum(c)}");
+
+        // 5
+        Console.Write("Введите число: ");
+        int n = int.Parse(Console.ReadLine());
+        Console.WriteLine($"Двузначное: {t.is2Digits(n)}");
+
+        // 7
+        Console.Write("Введите a: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Введите b: ");
+        int b = int.Parse(Console.ReadLine());
+        Console.Write("Введите num: ");
+        int num = int.Parse(Console.ReadLine());
+        Console.WriteLine($"В диапазоне: {t.isInRange(a, b, num)}");
+
+        // 9
+        Console.Write("Введите a: ");
+        int e1 = int.Parse(Console.ReadLine());
+        Console.Write("Введите b: ");
+        int e2 = int.Parse(Console.ReadLine());
+        Console.Write("Введите c: ");
+        int e3 = int.Parse(Console.ReadLine());
+        Console.WriteLine($"Равны: {t.isEqual(e1, e2, e3)}");
+    }
+}
