@@ -1,4 +1,3 @@
-[README (3).md](https://github.com/user-attachments/files/33533209/README.3.md)
 # Пустосмехов Михаил ИТ10 Лабораторная №1
 
 # Задание 1
